@@ -15,7 +15,7 @@ function substrings(str) {
     all_subs.push(leadingSubstrings(str, idx));
   }
 
-  return all_subs;
+  return all_subs.flat();
 }
 
 console.log(substrings('abcde'));
