@@ -1,0 +1,58 @@
+/*
+PROBLEM
+Ah, Bubble sort.
+- input: array
+- output: SAME array, but mutated to be sorted
+
+- Must sort the Bubble sort way, iterating over the array.
+
+EXAMPLE
+- must mutate the original array
+- must be able to handle letters and numbers
+- all input will have at least two elements
+
+DATA
+- Strings
+- Numbers
+- Arrays
+
+ALGORITHM
+- use a for 
+
+*/
+
+function bubbleSort(array) {
+  while (true) {
+    let swapped = false;
+    for (let i = 1; i < array.length; i += 1) {
+      if (array[i - 1] <= array[i]) {
+        continue;
+      }
+
+      swap(array, i - 1, i);
+      swapped = true;
+    }
+
+    if (!swapped) {
+      break;
+    }
+  }
+}
+
+function swap(array, idx1, idx2) {
+  const temp = array[idx1];
+  array[idx1] = array[idx2];
+  array[idx2] = temp;
+}
+
+const array1 = [5, 3];
+bubbleSort(array1);
+console.log(array1);    // [3, 5]
+
+const array2 = [6, 2, 7, 1, 4];
+bubbleSort(array2);
+console.log(array2);    // [1, 2, 4, 6, 7]
+
+const array3 = ['Sue', 'Pete', 'Alice', 'Tyler', 'Rachel', 'Kim', 'Bonnie'];
+bubbleSort(array3);
+console.log(array3);    // ["Alice", "Bonnie", "Kim", "Pete", "Rachel", "Sue", "Tyler"]
